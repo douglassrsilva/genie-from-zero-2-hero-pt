@@ -1,0 +1,28 @@
+[project]
+name = "genie-from-zero-2-hero-pt"
+version = "0.1.0"
+description = "Workshop Databricks de consumo para saúde de ativos industriais"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.1,<3",
+  "polars>=1.20,<2",
+  "pyarrow>=18,<23",
+]
+
+[dependency-groups]
+dev = [
+  "duckdb>=1.4,<2",
+  "pyyaml>=6.0,<7",
+  "pytest>=8.3,<10",
+  "ruff>=0.9,<1",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.databricks/
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+*.log

@@ -1,0 +1,38 @@
+{
+  "seed": 42,
+  "inicio_telemetria": "2026-09-21T00:00:00",
+  "fim_telemetria": "2026-09-27T23:55:00",
+  "dados_pessoais": false,
+  "arquivos": [
+    {
+      "arquivo": "sites.parquet",
+      "linhas": 30,
+      "sha256": "d658861f31aa2b22551e6fc070429f2edc04671dd7b911e695389c8ada25a0b8"
+    },
+    {
+      "arquivo": "assets.parquet",
+      "linhas": 120,
+      "sha256": "74f82ff73a8c18734360aa36683662de2b0569e5ecf78938ab5690d558f0a69b"
+    },
+    {
+      "arquivo": "telemetry_5min.parquet",
+      "linhas": 241920,
+      "sha256": "fc9430c8bb04646a55ead60a32ca1e46003b6b1d8a12fc69658f489a07fc176d"
+    },
+    {
+      "arquivo": "alarms.parquet",
+      "linhas": 480,
+      "sha256": "9ff2d8130fcf25d5f379b184ba698a30d57e13eb0ce684323299e39d5463fb43"
+    },
+    {
+      "arquivo": "work_orders.parquet",
+      "linhas": 240,
+      "sha256": "64878cba4807bbb236b66029d119165eaa2fc9f3757eaa6dcc167f378f825c46"
+    },
+    {
+      "arquivo": "operating_thresholds.parquet",
+      "linhas": 18,
+      "sha256": "0b6fad47d4aeb1dec6846a2216b31a777aa7e4997204a326bdca182a5f0b87c9"
+    }
+  ]
+}

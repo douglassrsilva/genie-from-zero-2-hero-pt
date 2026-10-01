@@ -1,0 +1,54 @@
+bundle:
+  name: genie-from-zero-2-hero-pt
+
+variables:
+  catalog:
+    description: Catálogo Unity Catalog já existente para o workshop
+  schema:
+    description: Schema já existente para os objetos do workshop
+  warehouse_id:
+    description: ID de um SQL Warehouse já existente
+
+resources:
+  apps:
+    asset_health:
+      name: ${bundle.target}-asset-health
+      description: App sintética de saúde de ativos para o workshop
+      source_code_path: ./apps/asset-health
+      config:
+        command:
+          - streamlit
+          - run
+          - app.py
+          - --server.address=0.0.0.0
+          - --server.port=8000
+          - --server.headless=true
+        env:
+          - name: UTILITY_CATALOG
+            value: ${var.catalog}
+          - name: UTILITY_SCHEMA
+            value: ${var.schema}
+          - name: DATABRICKS_WAREHOUSE_ID
+            value_from: sql-warehouse
+      resources:
+        - name: sql-warehouse
+          sql_warehouse:
+            id: ${var.warehouse_id}
+            permission: CAN_USE
+        - name: current-health-table
+          uc_securable:
+            securable_full_name: ${var.catalog}.${var.schema}.gold_asset_health_current
+            securable_type: TABLE
+            permission: SELECT
+        - name: hourly-health-table
+          uc_securable:
+            securable_full_name: ${var.catalog}.${var.schema}.gold_asset_health_hourly
+            securable_type: TABLE
+            permission: SELECT
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
