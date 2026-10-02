@@ -2,8 +2,9 @@
 -- MAGIC %md
 -- MAGIC # Laboratório 1 — camada Gold
 -- MAGIC
--- MAGIC Edite somente os dois valores abaixo. As seis tabelas `prepared_*` já
--- MAGIC devem ter sido carregadas pelo instrutor.
+-- MAGIC Antes deste laboratório, execute `labs/00_load_prepared.py` uma vez no
+-- MAGIC compute Python. Use exatamente o mesmo catálogo e schema nas duas etapas.
+-- MAGIC Este notebook interrompe cedo se alguma fonte `prepared_*` estiver ausente.
 
 -- COMMAND ----------
 
@@ -12,6 +13,28 @@ DECLARE OR REPLACE VARIABLE workshop_schema STRING DEFAULT 'PREENCHA_O_SCHEMA';
 
 USE CATALOG IDENTIFIER(workshop_catalog);
 USE SCHEMA IDENTIFIER(workshop_schema);
+
+-- COMMAND ----------
+-- MAGIC %md
+-- MAGIC ## Preflight obrigatório
+-- MAGIC
+-- MAGIC O resultado deve mostrar as contagens `30`, `120`, `241920`, `480`,
+-- MAGIC `240` e `18`. Se ocorrer `TABLE_OR_VIEW_NOT_FOUND`, volte ao laboratório
+-- MAGIC `00_load_prepared.py` e confira catálogo/schema.
+
+-- COMMAND ----------
+
+SELECT 'prepared_sites' AS table_name, COUNT(*) AS row_count FROM prepared_sites
+UNION ALL
+SELECT 'prepared_assets', COUNT(*) FROM prepared_assets
+UNION ALL
+SELECT 'prepared_telemetry_5min', COUNT(*) FROM prepared_telemetry_5min
+UNION ALL
+SELECT 'prepared_alarms', COUNT(*) FROM prepared_alarms
+UNION ALL
+SELECT 'prepared_work_orders', COUNT(*) FROM prepared_work_orders
+UNION ALL
+SELECT 'prepared_operating_thresholds', COUNT(*) FROM prepared_operating_thresholds;
 
 -- COMMAND ----------
 -- MAGIC %md

@@ -3,7 +3,7 @@
 ## Conteúdo
 
 - [x] Dados preparados e reproduzíveis
-- [x] Carga pré-workshop das seis tabelas fonte
+- [x] Laboratório 00 explícito para ler os Parquet e criar seis tabelas fonte
 - [x] Quatro tabelas Gold parametrizadas
 - [x] Dois Metric Views YAML 1.1
 - [x] Consultas de validação e Dashboard

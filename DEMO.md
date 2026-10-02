@@ -5,7 +5,8 @@
 1. Importe ou conecte este repositório a um Git Folder do workspace.
 2. Defina catálogo e schema de laboratório; não altere os arquivos para inserir
    nomes do ambiente.
-3. Execute `scripts/00_preworkshop_load_prepared.py` com os widgets preenchidos.
+3. Execute `labs/00_load_prepared.py` com os widgets preenchidos e confirme as
+   seis linhas `OK`.
 4. Execute os três SQL de `labs/` uma vez em um schema de ensaio.
 5. Prepare um SQL Warehouse com auto-stop curto e aqueça-o 10 minutos antes.
 6. Confirme que cada participante pode criar/consultar objetos no namespace.
@@ -17,7 +18,8 @@
 ## Ordem da demonstração
 
 1. Use a apresentação fornecida para os 20 minutos iniciais.
-2. Abra `01_create_gold.sql`; os participantes editam somente duas variáveis.
+2. Mostre a saída do `00_load_prepared.py` e abra `01_create_gold.sql`; os
+   participantes editam somente duas variáveis e executam o preflight.
 3. Abra `02_create_metric_views.sql`; explique dimensão, medida e sinônimo.
 4. Crie Domain/Subdomain em rascunho, sem publicar ainda.
 5. Crie o Genie Agent e cole `config/genie_agent_instructions.md`.

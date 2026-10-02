@@ -60,12 +60,15 @@ contingência no runbook.
 
 1. Instrutor: execute o [checklist e runbook](docs/INSTRUCTOR_RUNBOOK.md).
 2. Participante: use o [guia de laboratório](docs/PARTICIPANT_GUIDE.md).
-3. Crie as Gold com [`labs/01_create_gold.sql`](labs/01_create_gold.sql).
-4. Crie a semântica com [`labs/02_create_metric_views.sql`](labs/02_create_metric_views.sql).
-5. Use os guias de [Discover](docs/DOMAIN_DISCOVER_GUIDE.md),
+3. Carregue os Parquet prontos com
+   [`labs/00_load_prepared.py`](labs/00_load_prepared.py). Essa etapa lê os
+   arquivos e cria as seis tabelas `prepared_*`; ela não gera dados.
+4. Crie as Gold com [`labs/01_create_gold.sql`](labs/01_create_gold.sql).
+5. Crie a semântica com [`labs/02_create_metric_views.sql`](labs/02_create_metric_views.sql).
+6. Use os guias de [Discover](docs/DOMAIN_DISCOVER_GUIDE.md),
    [Genie](docs/GENIE_AGENT_GUIDE.md), [Dashboard](docs/DASHBOARD_GUIDE.md) e
    [Genie One/Ontology](docs/GENIE_ONE_ONTOLOGY_GUIDE.md).
-6. Adapte a [App de saúde de ativos](apps/asset-health/README.md).
+7. Adapte a [App de saúde de ativos](apps/asset-health/README.md).
 
 ## Pré-requisitos do participante
 

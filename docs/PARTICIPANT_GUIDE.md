@@ -9,20 +9,32 @@ Você receberá do instrutor:
 - SQL Warehouse a utilizar;
 - grupo ou permissões para criar os objetos do laboratório.
 
-Não gere dados e não instale dependências. As seis fontes sintéticas já estão
-carregadas.
+Não gere dados e não instale dependências. Os seis Parquet sintéticos já estão
+prontos no repositório.
+
+## 0. Carga dos dados preparados
+
+Esta etapa lê os arquivos existentes; ela não gera dados.
+
+1. Abra `labs/00_load_prepared.py` no Git Folder e conecte-o a um compute Python.
+2. Preencha os widgets `catalog` e `schema` fornecidos pelo instrutor.
+3. Execute **Run all** uma única vez.
+4. Confirme as seis linhas com status `OK`, especialmente:
+   `prepared_telemetry_5min = 241.920`.
+5. Copie exatamente os mesmos valores de catálogo e schema para os notebooks SQL.
 
 ## 1. Gold
 
 1. Abra `labs/01_create_gold.sql` no Git Folder.
 2. Substitua `PREENCHA_O_CATALOGO` e `PREENCHA_O_SCHEMA` nas duas variáveis.
-3. Execute uma célula por vez.
-4. Confirme ao final:
+3. Execute primeiro o preflight e confirme as seis tabelas `prepared_*`.
+4. Execute as demais células uma por vez.
+5. Confirme ao final:
    - 120 linhas em `gold_asset_health_current`;
    - 20.160 em `gold_asset_health_hourly`;
    - 210 em `gold_site_operations_daily`;
    - 240 em `gold_maintenance_impact`.
-5. Localize o ativo com menor `health_score` e leia `recommended_action`.
+6. Localize o ativo com menor `health_score` e leia `recommended_action`.
 
 ## 2. Metric Views
 

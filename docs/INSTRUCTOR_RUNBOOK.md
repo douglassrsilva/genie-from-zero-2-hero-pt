@@ -43,7 +43,8 @@ prática em consulta/configuração.
 ### Checklist de ensaio
 
 1. Conecte o repositório a um Git Folder.
-2. Execute `scripts/00_preworkshop_load_prepared.py` com catálogo/schema.
+2. Execute `labs/00_load_prepared.py` com catálogo/schema e deixe a saída das
+   seis tabelas visível para a turma.
 3. Confirme as contagens 30, 120, 241.920, 480, 240 e 18.
 4. Rode `labs/01_create_gold.sql` e `labs/02_create_metric_views.sql` completos.
 5. Rode `labs/03_validation_queries.sql` e confirme 120 ativos distintos.
@@ -78,10 +79,10 @@ no minuto 20.
 **Tell — 3 min:** Gold é o contrato estável e consumível. Mostre as seis fontes
 prepared no Catalog Explorer e explique a granularidade.
 
-**Show/prática — 13 min:** abra `labs/01_create_gold.sql`. Cada dupla altera as
-duas variáveis, executa os quatro blocos e lê os comentários. O instrutor chama
-atenção para o último evento, score, tendência horária, operação diária e
-impacto de manutenção.
+**Show/prática — 13 min:** mostre a carga concluída em `labs/00_load_prepared.py`
+e abra `labs/01_create_gold.sql`. Cada dupla altera as duas variáveis, executa o
+preflight e depois os quatro blocos. O instrutor chama atenção para o último
+evento, score, tendência horária, operação diária e impacto de manutenção.
 
 **Tell final — 2 min:** confira a saída: 120 linhas em
 `gold_asset_health_current`; 20.160 em `gold_asset_health_hourly`; 210 em
